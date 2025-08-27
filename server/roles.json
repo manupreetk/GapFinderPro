@@ -1,0 +1,170 @@
+{
+  "software_engineer": {
+    "title": "Software Engineer",
+    "required_skills": [
+      "Python",
+      "JavaScript",
+      "Git",
+      "SQL",
+      "REST APIs",
+      "Object-Oriented Programming",
+      "Data Structures",
+      "Algorithms",
+      "Testing",
+      "Debugging"
+    ],
+    "preferred_skills": [
+      "React",
+      "Node.js",
+      "Docker",
+      "AWS",
+      "CI/CD",
+      "Agile",
+      "TypeScript",
+      "GraphQL",
+      "MongoDB",
+      "Redis"
+    ],
+    "experience_level": "2-5 years"
+  },
+  "data_scientist": {
+    "title": "Data Scientist",
+    "required_skills": [
+      "Python",
+      "SQL",
+      "Statistics",
+      "Machine Learning",
+      "Pandas",
+      "NumPy",
+      "Data Visualization",
+      "Data Analysis",
+      "Mathematics",
+      "Problem Solving"
+    ],
+    "preferred_skills": [
+      "R",
+      "TensorFlow",
+      "PyTorch",
+      "Scikit-learn",
+      "Jupyter",
+      "Tableau",
+      "Power BI",
+      "Apache Spark",
+      "Big Data",
+      "Deep Learning"
+    ],
+    "experience_level": "3-6 years"
+  },
+  "frontend_developer": {
+    "title": "Frontend Developer",
+    "required_skills": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Responsive Design",
+      "Git",
+      "Web APIs",
+      "DOM Manipulation",
+      "Browser Development Tools",
+      "Cross-browser Compatibility"
+    ],
+    "preferred_skills": [
+      "TypeScript",
+      "Vue.js",
+      "Angular",
+      "Sass",
+      "Webpack",
+      "Redux",
+      "GraphQL",
+      "Testing (Jest, Cypress)",
+      "PWA",
+      "Performance Optimization"
+    ],
+    "experience_level": "2-4 years"
+  },
+  "backend_developer": {
+    "title": "Backend Developer",
+    "required_skills": [
+      "Python",
+      "SQL",
+      "REST APIs",
+      "Database Design",
+      "Git",
+      "Object-Oriented Programming",
+      "Server Management",
+      "Authentication",
+      "Data Modeling",
+      "Performance Optimization"
+    ],
+    "preferred_skills": [
+      "Django",
+      "Flask",
+      "FastAPI",
+      "PostgreSQL",
+      "MongoDB",
+      "Redis",
+      "Docker",
+      "AWS",
+      "Microservices",
+      "GraphQL"
+    ],
+    "experience_level": "2-5 years"
+  },
+  "devops_engineer": {
+    "title": "DevOps Engineer",
+    "required_skills": [
+      "Linux",
+      "Docker",
+      "CI/CD",
+      "Git",
+      "Shell Scripting",
+      "Cloud Platforms",
+      "Infrastructure as Code",
+      "Monitoring",
+      "Automation",
+      "Networking"
+    ],
+    "preferred_skills": [
+      "Kubernetes",
+      "AWS",
+      "Terraform",
+      "Ansible",
+      "Jenkins",
+      "Prometheus",
+      "Grafana",
+      "Helm",
+      "Python",
+      "Security Best Practices"
+    ],
+    "experience_level": "3-6 years"
+  },
+  "product_manager": {
+    "title": "Product Manager",
+    "required_skills": [
+      "Product Strategy",
+      "Market Research",
+      "User Research",
+      "Analytics",
+      "Agile",
+      "Stakeholder Management",
+      "Communication",
+      "Project Management",
+      "Data Analysis",
+      "Problem Solving"
+    ],
+    "preferred_skills": [
+      "SQL",
+      "A/B Testing",
+      "User Experience Design",
+      "Technical Knowledge",
+      "Roadmap Planning",
+      "Competitive Analysis",
+      "Customer Development",
+      "Growth Metrics",
+      "Business Strategy",
+      "Leadership"
+    ],
+    "experience_level": "3-7 years"
+  }
+}
