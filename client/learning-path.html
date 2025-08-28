@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Path - GapFinderPro</title>
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <header class="modern-header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <div class="logo-icon">🎯</div>
+                    <span class="logo-text">GapFinderPro</span>
+                </div>
+                <div class="nav-center">
+                    <a href="index.html" class="nav-link">HOME</a>
+                    <a href="#" class="nav-link">SOLUTIONS</a>
+                    <a href="#" class="nav-link">TOOLS</a>
+                    <a href="learning-path.html" class="nav-link active">LEARNING PATH</a>
+                    <a href="#" class="nav-link">RESOURCES</a>
+                </div>
+                <div class="nav-right">
+                    <button class="login-btn">Login</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Learning Path Main Section -->
+    <section class="learning-path-section">
+        <div class="container">
+            <!-- Progress Header -->
+            <div class="progress-header">
+                <h1 class="progress-title">Crafting a custom learning path</h1>
+                <div class="progress-bar-container">
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill" style="width: 20%;"></div>
+                    </div>
+                    <span class="progress-text">20% / 100%</span>
+                </div>
+            </div>
+
+            <!-- Main Question Section -->
+            <div class="question-section">
+                <h2 class="question-title">What do you want to focus on?</h2>
+                <p class="question-subtitle">Select your primary goal.</p>
+
+                <!-- Learning Path Options -->
+                <div class="path-options">
+                    <!-- Frontend Option -->
+                    <div class="path-card" data-path="frontend">
+                        <div class="path-icons">
+                            <div class="tech-icon-small html">5</div>
+                            <div class="tech-icon-small css">3</div>
+                            <div class="tech-icon-small js-small">JS</div>
+                            <div class="tech-icon-small react-small">⚛</div>
+                            <div class="tech-icon-small tailwind">~</div>
+                            <div class="tech-icon-small next">N</div>
+                            <div class="tech-icon-small figma">f</div>
+                            <div class="tech-icon-small vite">V</div>
+                            <div class="tech-icon-small typescript-small">T</div>
+                        </div>
+                        <div class="path-label">
+                            <span class="path-letter">A</span>
+                            <span class="path-name">Frontend</span>
+                        </div>
+                    </div>
+
+                    <!-- Backend Option -->
+                    <div class="path-card" data-path="backend">
+                        <div class="path-icons">
+                            <div class="tech-icon-small nodejs-small">N</div>
+                            <div class="tech-icon-small github">🐙</div>
+                            <div class="tech-icon-small cursor">🖱</div>
+                            <div class="tech-icon-small mongo">M</div>
+                            <div class="tech-icon-small postgres">🐘</div>
+                            <div class="tech-icon-small git-small">G</div>
+                            <div class="tech-icon-small js-backend">JS</div>
+                            <div class="tech-icon-small github-actions">🚀</div>
+                        </div>
+                        <div class="path-label">
+                            <span class="path-letter">B</span>
+                            <span class="path-name">Backend</span>
+                        </div>
+                    </div>
+
+                    <!-- Full-stack Option -->
+                    <div class="path-card selected" data-path="fullstack">
+                        <div class="path-icons">
+                            <div class="tech-icon-small react-fs">⚛</div>
+                            <div class="tech-icon-small next-fs">▲</div>
+                            <div class="tech-icon-small docker">🐳</div>
+                            <div class="tech-icon-small typescript-fs">TS</div>
+                            <div class="tech-icon-small nodejs-fs">N</div>
+                            <div class="tech-icon-small git-fs">G</div>
+                            <div class="tech-icon-small vite-fs">V</div>
+                            <div class="tech-icon-small github-fs">🐙</div>
+                        </div>
+                        <div class="path-label">
+                            <span class="path-letter">C</span>
+                            <span class="path-name">Full-stack</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="navigation-buttons">
+                    <button class="nav-btn back-btn">
+                        ← Back
+                    </button>
+                    <button class="nav-btn next-btn">
+                        Next →
+                    </button>
+                </div>
+
+                <!-- Skip Option -->
+                <div class="skip-option">
+                    <a href="#" class="skip-link">In a rush? Skip the quiz and come back later.</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Path selection functionality
+        document.querySelectorAll('.path-card').forEach(card => {
+            card.addEventListener('click', function() {
+                // Remove selected class from all cards
+                document.querySelectorAll('.path-card').forEach(c => c.classList.remove('selected'));
+                // Add selected class to clicked card
+                this.classList.add('selected');
+            });
+        });
+
+        // Navigation functionality
+        document.querySelector('.next-btn').addEventListener('click', function() {
+            const selectedPath = document.querySelector('.path-card.selected');
+            if (selectedPath) {
+                const pathType = selectedPath.getAttribute('data-path');
+                console.log('Selected path:', pathType);
+                // Here you would navigate to the next step or save the selection
+                alert(`You selected: ${pathType}. Next step would be implemented here.`);
+            }
+        });
+
+        document.querySelector('.back-btn').addEventListener('click', function() {
+            // Navigate back to previous step or home page
+            window.history.back();
+        });
+    </script>
+</body>
+</html>
