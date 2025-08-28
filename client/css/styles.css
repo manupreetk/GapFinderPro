@@ -8,10 +8,10 @@
     --success: #38b000;
     --warning: #ff9e00;
     --error: #d90429;
-    --bg-light: #1a1a2e;
-    --bg-dark: #16213e;
+    --bg-light: #040818;
+    --bg-dark: #020510;
     --text-gray: #a0a9c0;
-    --card-bg: #252c48;
+    --card-bg: #0a1020;
     --orange: #ffa500;
     --green: #4ade80;
 }
@@ -24,7 +24,7 @@
 }
 
 body {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    background: #040818;
     color: var(--dark);
     line-height: 1.6;
     min-height: 100vh;
@@ -38,7 +38,7 @@ body {
 
 /* Modern Header Styles */
 .modern-header {
-    background: rgba(26, 26, 46, 0.9);
+    background: rgba(4, 8, 24, 0.95);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding: 1rem 0;
     position: sticky;
@@ -116,144 +116,34 @@ body {
     position: relative;
     min-height: 90vh;
     background: 
-        linear-gradient(135deg, rgba(15, 15, 35, 0.8) 0%, rgba(26, 26, 46, 0.7) 50%, rgba(22, 33, 62, 0.8) 100%),
         url('../assets/landing-page.png');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     overflow: hidden;
-    padding: 80px 0;
+    padding: 40px 0 80px 0;
 }
 
-/* Dark overlay for better text readability */
-.hero-modern::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.3);
-    z-index: 1;
-}
-
-/* Floating Elements Container */
-.hero-visual {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 2;
-    pointer-events: none;
-}
-
-/* Floating Project Icons */
-.floating-project {
-    position: absolute;
-    animation: float 6s ease-in-out infinite;
-    opacity: 0.9;
-}
-
-.floating-project.project-1 {
-    top: 20%;
-    left: 15%;
-    animation-delay: 0s;
-}
-
-.floating-project.project-2 {
-    top: 15%;
-    right: 20%;
-    animation-delay: -2s;
-}
-
-.floating-project.project-3 {
-    bottom: 35%;
-    left: 10%;
-    animation-delay: -4s;
-}
-
-.floating-project.project-4 {
-    bottom: 40%;
-    right: 15%;
-    animation-delay: -1s;
-}
-
-.project-icon {
-    width: 80px;
-    height: 80px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-}
-
-/* Trophy at the top */
-.mountain-trophy {
-    position: absolute;
-    top: 15%;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 3rem;
-    animation: glow 2s ease-in-out infinite alternate;
-    z-index: 3;
-}
-
-/* Climber figure */
-.mountain-climber {
-    position: absolute;
-    bottom: 30%;
-    left: 45%;
-    font-size: 2rem;
-    animation: climb 4s ease-in-out infinite;
-    z-index: 3;
-}
-
-/* Stars and sparkles */
-.star {
-    position: absolute;
-    color: #ffd700;
-    animation: twinkle 2s ease-in-out infinite;
-}
-
-.star.star-1 {
-    top: 25%;
-    left: 25%;
-    animation-delay: 0s;
-}
-
-.star.star-2 {
-    top: 30%;
-    right: 30%;
-    animation-delay: -1s;
-}
-
-.star.star-3 {
-    top: 45%;
-    left: 70%;
-    animation-delay: -0.5s;
-}
-
+/* Hero Content */
 .hero-content {
     text-align: center;
     z-index: 10;
     position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 20px;
 }
 
 .hero-title {
-    font-size: 4rem;
+    font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
     line-height: 1.1;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    color: var(--dark);
 }
 
 .highlight-orange {
@@ -274,6 +164,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+    line-height: 1.6;
 }
 
 .cta-button {
@@ -1098,7 +989,7 @@ body {
 /* Companies Section */
 .companies-section {
     padding: 60px 0;
-    background: rgba(22, 33, 62, 0.7);
+    background: rgba(4, 8, 24, 0.8);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -1177,7 +1068,7 @@ body {
 /* Testimonials Section */
 .testimonials-section {
     padding: 80px 0;
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    background: #040818;
 }
 
 .testimonials-grid {
@@ -1281,7 +1172,7 @@ body {
 /* Learning Path Page Styles */
 .learning-path-section {
     min-height: 100vh;
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    background: #040818;
     padding: 40px 0;
     display: flex;
     align-items: center;
@@ -1363,6 +1254,32 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Path Card Background Images */
+.path-card.frontend-card {
+    background-image: url('../assets/frontend.svg');
+    background-size: 120px 120px;
+    background-position: center 70%;
+}
+
+.path-card.backend-card {
+    background-image: url('../assets/backend.svg');
+    background-size: 120px 120px;
+    background-position: center 70%;
+}
+
+.path-card.fullstack-card {
+    background-image: url('../assets/fullstack.svg');
+    background-size: 120px 120px;
+    background-position: center 70%;
 }
 
 .path-card:hover {
@@ -1372,65 +1289,23 @@ body {
 
 .path-card.selected {
     border-color: #2196f3;
-    background: rgba(33, 150, 243, 0.1);
+    box-shadow: 0 0 20px rgba(33, 150, 243, 0.3);
 }
 
 .path-icons {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    margin-bottom: 24px;
-    justify-items: center;
+    display: none;
 }
-
-.tech-icon-small {
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 0.875rem;
-    color: white;
-}
-
-/* Frontend Icons */
-.tech-icon-small.html { background: #e34c26; }
-.tech-icon-small.css { background: #1572b6; }
-.tech-icon-small.js-small { background: #f7df1e; color: #000; }
-.tech-icon-small.react-small { background: #61dafb; color: #000; }
-.tech-icon-small.tailwind { background: #06b6d4; }
-.tech-icon-small.next { background: #000; }
-.tech-icon-small.figma { background: #f24e1e; }
-.tech-icon-small.vite { background: #646cff; }
-.tech-icon-small.typescript-small { background: #3178c6; }
-
-/* Backend Icons */
-.tech-icon-small.nodejs-small { background: #339933; }
-.tech-icon-small.github { background: #333; }
-.tech-icon-small.cursor { background: #666; }
-.tech-icon-small.mongo { background: #47a248; }
-.tech-icon-small.postgres { background: #336791; }
-.tech-icon-small.git-small { background: #f05032; }
-.tech-icon-small.js-backend { background: #f7df1e; color: #000; }
-.tech-icon-small.github-actions { background: #2088ff; }
-
-/* Full-stack Icons */
-.tech-icon-small.react-fs { background: #61dafb; color: #000; }
-.tech-icon-small.next-fs { background: #000; }
-.tech-icon-small.docker { background: #2496ed; }
-.tech-icon-small.typescript-fs { background: #3178c6; }
-.tech-icon-small.nodejs-fs { background: #339933; }
-.tech-icon-small.git-fs { background: #f05032; }
-.tech-icon-small.vite-fs { background: #646cff; }
-.tech-icon-small.github-fs { background: #333; }
 
 .path-label {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 12px;
+    background: rgba(4, 8, 24, 0.95);
+    padding: 12px 20px;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .path-letter {
