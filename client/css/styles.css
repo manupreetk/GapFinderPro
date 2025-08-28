@@ -106,18 +106,36 @@ body {
     background: var(--primary-dark);
 }
 
-/* Modern Hero Section */
+/* Modern Hero Section with Custom Background */
 .hero-modern {
     position: relative;
     min-height: 80vh;
     background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    /* Add this line when you have your Canva background: */
+    /* background-image: url('../assets/hero-background.png'); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
 }
 
+/* Optional: Add overlay for better text readability */
+.hero-modern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1); /* Adjust opacity as needed */
+    pointer-events: none;
+}
+
 .hero-background {
+    /* Keep this for now, can be removed when using background image */
     position: absolute;
     top: 0;
     left: 0;
@@ -616,3 +634,293 @@ body {
                 right: auto;
             }
         }
+        
+        /* Main Content Section */
+.main-section {
+    padding: 60px 0;
+    background: #f8fafc;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.panel {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+}
+
+.panel-header {
+    margin-bottom: 20px;
+}
+
+.panel-header h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--dark);
+    margin: 0;
+}
+
+.user-selector {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    cursor: pointer;
+}
+
+.user-avatar img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.user-name {
+    flex: 1;
+    font-weight: 500;
+    color: var(--dark);
+}
+
+.dropdown-icon {
+    color: var(--text-gray);
+}
+
+.panel-section {
+    margin-bottom: 24px;
+}
+
+.panel-section h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 12px;
+}
+
+.platform-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.platform-tag {
+    background: #f1f5f9;
+    color: var(--text-gray);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.platform-tag.more {
+    color: var(--primary);
+    cursor: pointer;
+}
+
+.content-preview {
+    background: #f8fafc;
+    padding: 16px;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary);
+}
+
+.content-text p {
+    margin-bottom: 8px;
+    line-height: 1.5;
+    color: var(--text-gray);
+}
+
+.hashtags {
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.hashtags span {
+    color: var(--primary);
+    font-weight: 500;
+    font-size: 0.875rem;
+}
+
+/* Post Preview Styles */
+.post-preview {
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.post-user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.post-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.post-user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.post-username {
+    font-weight: 600;
+    color: var(--dark);
+    font-size: 0.875rem;
+}
+
+.post-handle {
+    color: var(--text-gray);
+    font-size: 0.75rem;
+}
+
+.platform-icon {
+    color: var(--text-gray);
+}
+
+.post-content {
+    padding: 16px;
+}
+
+.post-content p {
+    margin-bottom: 12px;
+    line-height: 1.5;
+    color: var(--dark);
+}
+
+.post-hashtags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.post-hashtags span {
+    color: var(--primary);
+    font-size: 0.875rem;
+}
+
+.post-image {
+    border-top: 1px solid #e2e8f0;
+}
+
+.post-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.post-stats {
+    padding: 12px 16px;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    gap: 16px;
+    font-size: 0.875rem;
+    color: var(--text-gray);
+}
+
+@media (max-width: 968px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+}
+
+/* Companies Section */
+.companies-section {
+    padding: 60px 0;
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+}
+
+.companies-heading {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-gray);
+    margin-bottom: 40px;
+    letter-spacing: -0.025em;
+}
+
+.companies-carousel {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.companies-track {
+    display: flex;
+    align-items: center;
+    animation: scroll 30s linear infinite;
+    width: fit-content;
+}
+
+.company-logo {
+    flex-shrink: 0;
+    margin: 0 40px;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+    filter: grayscale(100%);
+}
+
+.company-logo:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+}
+
+.company-logo img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    max-width: 120px;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Pause animation on hover */
+.companies-carousel:hover .companies-track {
+    animation-play-state: paused;
+}
+
+@media (max-width: 768px) {
+    .companies-heading {
+        font-size: 1.25rem;
+        margin-bottom: 30px;
+    }
+    
+    .company-logo {
+        margin: 0 20px;
+    }
+    
+    .company-logo img {
+        height: 30px;
+        max-width: 80px;
+    }
+}
