@@ -111,16 +111,135 @@ body {
     background: var(--primary-dark);
 }
 
-/* Modern Hero Section with Custom Background */
+/* Modern Hero Section with 3D Mountain Background */
 .hero-modern {
     position: relative;
     min-height: 90vh;
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    background: 
+        linear-gradient(135deg, rgba(15, 15, 35, 0.8) 0%, rgba(26, 26, 46, 0.7) 50%, rgba(22, 33, 62, 0.8) 100%),
+        url('../assets/landing-page.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     padding: 80px 0;
+}
+
+/* Dark overlay for better text readability */
+.hero-modern::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+/* Floating Elements Container */
+.hero-visual {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Floating Project Icons */
+.floating-project {
+    position: absolute;
+    animation: float 6s ease-in-out infinite;
+    opacity: 0.9;
+}
+
+.floating-project.project-1 {
+    top: 20%;
+    left: 15%;
+    animation-delay: 0s;
+}
+
+.floating-project.project-2 {
+    top: 15%;
+    right: 20%;
+    animation-delay: -2s;
+}
+
+.floating-project.project-3 {
+    bottom: 35%;
+    left: 10%;
+    animation-delay: -4s;
+}
+
+.floating-project.project-4 {
+    bottom: 40%;
+    right: 15%;
+    animation-delay: -1s;
+}
+
+.project-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Trophy at the top */
+.mountain-trophy {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3rem;
+    animation: glow 2s ease-in-out infinite alternate;
+    z-index: 3;
+}
+
+/* Climber figure */
+.mountain-climber {
+    position: absolute;
+    bottom: 30%;
+    left: 45%;
+    font-size: 2rem;
+    animation: climb 4s ease-in-out infinite;
+    z-index: 3;
+}
+
+/* Stars and sparkles */
+.star {
+    position: absolute;
+    color: #ffd700;
+    animation: twinkle 2s ease-in-out infinite;
+}
+
+.star.star-1 {
+    top: 25%;
+    left: 25%;
+    animation-delay: 0s;
+}
+
+.star.star-2 {
+    top: 30%;
+    right: 30%;
+    animation-delay: -1s;
+}
+
+.star.star-3 {
+    top: 45%;
+    left: 70%;
+    animation-delay: -0.5s;
 }
 
 .hero-content {
@@ -134,14 +253,17 @@ body {
     font-weight: 700;
     margin-bottom: 1.5rem;
     line-height: 1.1;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .highlight-orange {
     color: var(--orange);
+    text-shadow: 0 0 20px rgba(255, 165, 0, 0.5);
 }
 
 .highlight-green {
     color: var(--green);
+    text-shadow: 0 0 20px rgba(74, 222, 128, 0.5);
 }
 
 .hero-subtitle {
@@ -151,6 +273,7 @@ body {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
 }
 
 .cta-button {
@@ -164,12 +287,36 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+    z-index: 10;
+    position: relative;
 }
 
 .cta-button:hover {
     background: var(--primary-dark);
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+}
+
+/* Animations */
+@keyframes glow {
+    0% { 
+        filter: drop-shadow(0 0 5px #ffd700) drop-shadow(0 0 10px #ffd700);
+        transform: translateX(-50%) scale(1);
+    }
+    100% { 
+        filter: drop-shadow(0 0 20px #ffd700) drop-shadow(0 0 30px #ffd700);
+        transform: translateX(-50%) scale(1.1);
+    }
+}
+
+@keyframes climb {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
 }
 
 /* 3D Skill Pyramid */
