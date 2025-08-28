@@ -1,505 +1,188 @@
 <!DOCTYPE html>
-<html lang=<"en">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GapFinderPro - Bridge Your Skill Gaps</title>
-    <style>
-        :root {
-            --primary: #4361ee;
-            --primary-dark: #3a56d4;
-            --secondary: #7209b7;
-            --accent: #4cc9f0;
-            --light: #f8f9fa;
-            --dark: #212529;
-            --success: #38b000;
-            --warning: #ff9e00;
-            --error: #d90429;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: #f5f7ff;
-            color: var(--dark);
-            line-height: 1.6;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 1rem 0;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo span {
-            color: var(--accent);
-        }
-        
-        .logo-icon {
-            margin-right: 10px;
-            font-size: 2rem;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-        }
-        
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        
-        .nav-links a:hover {
-            color: var(--accent);
-        }
-        
-        .hero {
-            text-align: center;
-            padding: 3rem 0;
-            background-color: white;
-            border-radius: 0 0 20px 20px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-        }
-        
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto 2rem;
-            color: #555;
-        }
-        
-        .cta-btn {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            font-weight: 600;
-            font-size: 1.1rem;
-            padding: 12px 24px;
-            border-radius: 50px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-        
-        .cta-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
-        }
-        
-        .main-content {
-            margin: 3rem 0;
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-        
-        .section {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            padding: 2rem;
-        }
-        
-        .section-title {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary);
-            display: flex;
-            align-items: center;
-        }
-        
-        .section-title i {
-            margin-right: 10px;
-        }
-        
-        .input-group {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        label {
-            font-weight: 600;
-            color: var(--dark);
-        }
-        
-        textarea, input, select {
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            width: 100%;
-            font-size: 1rem;
-        }
-        
-        .upload-area {
-            border: 2px dashed #ddd;
-            border-radius: 10px;
-            padding: 2rem;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .upload-area:hover {
-            border-color: var(--primary);
-            background-color: rgba(67, 97, 238, 0.05);
-        }
-        
-        .upload-icon {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-        
-        .tabs {
-            display: flex;
-            margin-bottom: 1.5rem;
-            background-color: #f5f7ff;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        
-        .tab {
-            flex: 1;
-            padding: 1rem;
-            text-align: center;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        
-        .tab.active {
-            background-color: var(--primary);
-            color: white;
-        }
-        
-        .tab:not(.active):hover {
-            background-color: rgba(67, 97, 238, 0.1);
-        }
-        
-        .tab-content {
-            display: none;
-        }
-        
-        .tab-content.active {
-            display: block;
-        }
-        
-        .results-section {
-            display: none;
-            margin-top: 2rem;
-        }
-        
-        .results-card {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            padding: 2rem;
-            margin-bottom: 2rem;
-        }
-        
-        .skill-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin: 1.5rem 0;
-        }
-        
-        .skill-tag {
-            background-color: rgba(67, 97, 238, 0.1);
-            color: var(--primary);
-            padding: 8px 16px;
-            border-radius: 50px;
-            font-weight: 500;
-        }
-        
-        .skill-tag.missing {
-            background-color: rgba(217, 4, 41, 0.1);
-            color: var(--error);
-        }
-        
-        .progress-bar {
-            height: 10px;
-            background-color: #e9ecef;
-            border-radius: 5px;
-            margin: 1rem 0;
-            overflow: hidden;
-        }
-        
-        .progress {
-            height: 100%;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 5px;
-        }
-        
-        .courses-section {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        
-        .course-card {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-        
-        .course-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .course-img {
-            height: 280px;
-            background-color: #ddd;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #888;
-            font-size: 0.9rem;
-        }
-        
-        .course-content {
-            padding: 1.5rem;
-        }
-        
-        .course-provider {
-            font-size: 0.9rem;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-        
-        .course-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-        
-        .course-info {
-            display: flex;
-            justify-content: space-between;
-            color: #666;
-            font-size: 0.9rem;
-            margin-top: 1rem;
-        }
-        
-        .course-btn {
-            display: block;
-            background-color: var(--primary);
-            color: white;
-            text-align: center;
-            padding: 10px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 500;
-            margin-top: 1rem;
-            transition: all 0.3s ease;
-        }
-        
-        .course-btn:hover {
-            background-color: var(--primary-dark);
-        }
-        
-        .steps {
-            display: flex;
-            justify-content: space-between;
-            margin: 3rem 0;
-            padding: 0 50px;
-        }
-        
-        .step {
-            text-align: center;
-            flex: 1;
-            position: relative;
-        }
-        
-        .step:not(:last-child)::after {
-            content: "";
-            position: absolute;
-            top: 30px;
-            right: -50%;
-            width: 100%;
-            height: 2px;
-            background-color: #ddd;
-            z-index: -1;
-        }
-        
-        .step.active:not(:last-child)::after {
-            background: linear-gradient(90deg, var(--primary), var(--accent));
-        }
-        
-        .step-number {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background-color: #ddd;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-            font-weight: 600;
-            color: #666;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .step.active .step-number {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-        }
-        
-        .step-title {
-            font-weight: 500;
-            color: #666;
-        }
-        
-        .step.active .step-title {
-            color: var(--primary);
-            font-weight: 600;
-        }
-        
-        footer {
-            background-color: var(--dark);
-            color: white;
-            padding: 2rem 0;
-            margin-top: 3rem;
-        }
-        
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
-        
-        .footer-column {
-            flex: 1;
-            min-width: 250px;
-        }
-        
-        .footer-title {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            color: var(--accent);
-        }
-        
-        .footer-links {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 0.8rem;
-        }
-        
-        .footer-links a {
-            color: #ddd;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .footer-links a:hover {
-            color: var(--accent);
-        }
-        
-        .copyright {
-            text-align: center;
-            margin-top: 2rem;
-            padding-top: 1rem;
-            border-top: 1px solid #444;
-            color: #999;
-        }
-        
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .steps {
-                flex-direction: column;
-                gap: 2rem;
-                padding: 0;
-            }
-            
-            .step:not(:last-child)::after {
-                width: 2px;
-                height: 100%;
-                top: 60px;
-                left: 50%;
-                right: auto;
-            }
-        }
-    </style>
+    <link href="css/styles.css" rel="stylesheet">
 </head>
 <body>
-    <header>
+    <header class="modern-header">
         <div class="container">
-            <nav>
+            <nav class="navbar">
                 <div class="logo">
                     <div class="logo-icon">🎯</div>
-                    Gap<span>FinderPro</span>
+                    <span class="logo-text">GapFinderPro</span>
                 </div>
-                <div class="nav-links">
-                    <a href="#">Home</a>
-                    <a href="#">Features</a>
-                    <a href="#">How It Works</a>
-                    <a href="#">About</a>
-                    <a href="#">Contact</a>
+                <div class="nav-center">
+                    <a href="#" class="nav-link active">HOME</a>
+                    <a href="#" class="nav-link">SOLUTIONS</a>
+                    <a href="#" class="nav-link">TOOLS</a>
+                    <a href="#" class="nav-link">RESOURCES</a>
+                </div>
+                <div class="nav-right">
+                    <button class="login-btn">Login</button>
                 </div>
             </nav>
         </div>
     </header>
     
-    <section class="hero">
+    <section class="hero-modern">
         <div class="container">
-            <h1>Bridge Your Skills Gap, Boost Your Career</h1>
-            <p>Upload your resume or enter your skills to find out what you need to learn for your dream role. Get personalized course recommendations and certifications to help you succeed.</p>
-            <a href="#analyzer" class="cta-btn">Get Started Now</a>
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Go From
+                    <span class="highlight-orange">I Know This</span> to <span class="highlight-green">I Built This</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Stop consuming. Start creating. Build real projects that get you hired.
+                </p>
+                <button class="cta-button">Start Building Now</button>
+            </div>
+            
+            <!-- Central 3D Element -->
+            <div class="hero-visual">
+                <div class="skill-pyramid">
+                    <div class="tech-icon nodejs">N</div>
+                    <div class="tech-icon js">JS</div>
+                    <div class="tech-icon typescript">TS</div>
+                    <div class="tech-icon react">⚛</div>
+                    <div class="tech-icon vue">V</div>
+                    <div class="tech-icon git">🔀</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Company Logos Section -->
+    <section class="companies-section">
+        <div class="container">
+            <h2 class="companies-heading">They Started Like You. Now They Work Here</h2>
+            <div class="companies-carousel">
+                <div class="companies-track">
+                    <div class="company-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/512px-Microsoft_logo.svg.png" alt="Microsoft">
+                    </div>
+                    <div class="company-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/512px-Amazon_logo.svg.png" alt="Amazon">
+                    </div>
+                    <div class="company-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Shopify_logo_2018.svg/512px-Shopify_logo_2018.svg.png" alt="Shopify">
+                    </div>
+                    <div class="company-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Loom_logo.svg/512px-Loom_logo.svg.png" alt="Loom">
+                    </div>
+                    <div class="company-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Linear_logo.svg/512px-Linear_logo.svg.png" alt="Linear">
+                    </div>
+                    <div class="company-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/512px-McDonald%27s_Golden_Arches.svg.png" alt="Nike">
+                    </div>
+                    <div class="company-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Vercel_logo_black.svg/512px-Vercel_logo_black.svg.png" alt="Vercel">
+                    </div>
+                    <div class="company-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Nvidia_logo.svg/512px-Nvidia_logo.svg.png" alt="NVIDIA">
+                    </div>
+                    <div class="company-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Adobe_Systems_logo_and_wordmark.svg/512px-Adobe_Systems_logo_and_wordmark.svg.png" alt="Adobe">
+                    </div>
+                    <!-- Duplicate for seamless loop -->
+                    <div class="company-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/512px-Microsoft_logo.svg.png" alt="Microsoft">
+                    </div>
+                    <div class="company-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/512px-Amazon_logo.svg.png" alt="Amazon">
+                    </div>
+                    <div class="company-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Shopify_logo_2018.svg/512px-Shopify_logo_2018.svg.png" alt="Shopify">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face" alt="George Harris" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <span class="testimonial-name">George Harris</span>
+                            <span class="testimonial-role">Full Stack Developer</span>
+                        </div>
+                        <div class="verified-badge">✓</div>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>I've watched all JSM's YouTube videos, but what's available on here is just next level. It's clearer, deeper, and actually helps me build things that matter.</p>
+                        <div class="testimonial-rating">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=40&h=40&fit=crop&crop=face" alt="Arjun Mehta" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <span class="testimonial-name">Arjun Mehta</span>
+                            <span class="testimonial-role">Software Developer</span>
+                        </div>
+                        <div class="verified-badge">✓</div>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>Recently joined JSM Pro, and got my first real dev job in just a few months. It gave me exactly what I needed to switch careers. Staying subscribed for the community! :)</p>
+                        <div class="testimonial-rating">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face" alt="Agus Pratama" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <span class="testimonial-name">Agus Pratama</span>
+                            <span class="testimonial-role">Web Developer</span>
+                        </div>
+                        <div class="verified-badge">✓</div>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>I was scared of AI taking my job soon but Adrian taught me some stuff that my boss loved and now I'm not worried at all! Might even get promoted!!!</p>
+                        <div class="testimonial-rating">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=40&h=40&fit=crop&crop=face" alt="Jack Wilson" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <span class="testimonial-name">Jack Wilson</span>
+                            <span class="testimonial-role">Frontend Developer</span>
+                        </div>
+                        <div class="verified-badge">✓</div>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>After going through the Next.js course I was able to optimize my work's codebase and finally got that raise! Totally worth it.</p>
+                        <div class="testimonial-rating">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     
     <div class="container">
-        <div class="steps">
+        <div class="steps" style="display: none;">
             <div class="step active">
                 <div class="step-number">1</div>
                 <div class="step-title">Input Your Skills</div>
