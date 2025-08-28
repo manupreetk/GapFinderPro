@@ -1254,6 +1254,32 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Path Card Background Images */
+.path-card.frontend-card {
+    background-image: url('../assets/frontend.svg');
+    background-size: 120px 120px;
+    background-position: center 70%;
+}
+
+.path-card.backend-card {
+    background-image: url('../assets/backend.svg');
+    background-size: 120px 120px;
+    background-position: center 70%;
+}
+
+.path-card.fullstack-card {
+    background-image: url('../assets/fullstack.svg');
+    background-size: 120px 120px;
+    background-position: center 70%;
 }
 
 .path-card:hover {
@@ -1263,65 +1289,23 @@ body {
 
 .path-card.selected {
     border-color: #2196f3;
-    background: rgba(33, 150, 243, 0.1);
+    box-shadow: 0 0 20px rgba(33, 150, 243, 0.3);
 }
 
 .path-icons {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    margin-bottom: 24px;
-    justify-items: center;
+    display: none;
 }
-
-.tech-icon-small {
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 0.875rem;
-    color: white;
-}
-
-/* Frontend Icons */
-.tech-icon-small.html { background: #e34c26; }
-.tech-icon-small.css { background: #1572b6; }
-.tech-icon-small.js-small { background: #f7df1e; color: #000; }
-.tech-icon-small.react-small { background: #61dafb; color: #000; }
-.tech-icon-small.tailwind { background: #06b6d4; }
-.tech-icon-small.next { background: #000; }
-.tech-icon-small.figma { background: #f24e1e; }
-.tech-icon-small.vite { background: #646cff; }
-.tech-icon-small.typescript-small { background: #3178c6; }
-
-/* Backend Icons */
-.tech-icon-small.nodejs-small { background: #339933; }
-.tech-icon-small.github { background: #333; }
-.tech-icon-small.cursor { background: #666; }
-.tech-icon-small.mongo { background: #47a248; }
-.tech-icon-small.postgres { background: #336791; }
-.tech-icon-small.git-small { background: #f05032; }
-.tech-icon-small.js-backend { background: #f7df1e; color: #000; }
-.tech-icon-small.github-actions { background: #2088ff; }
-
-/* Full-stack Icons */
-.tech-icon-small.react-fs { background: #61dafb; color: #000; }
-.tech-icon-small.next-fs { background: #000; }
-.tech-icon-small.docker { background: #2496ed; }
-.tech-icon-small.typescript-fs { background: #3178c6; }
-.tech-icon-small.nodejs-fs { background: #339933; }
-.tech-icon-small.git-fs { background: #f05032; }
-.tech-icon-small.vite-fs { background: #646cff; }
-.tech-icon-small.github-fs { background: #333; }
 
 .path-label {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 12px;
+    background: rgba(4, 8, 24, 0.95);
+    padding: 12px 20px;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .path-letter {
