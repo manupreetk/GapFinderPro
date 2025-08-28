@@ -4,12 +4,16 @@
     --secondary: #7209b7;
     --accent: #4cc9f0;
     --light: #f8f9fa;
-    --dark: #212529;
+    --dark: #ffffff;
     --success: #38b000;
     --warning: #ff9e00;
     --error: #d90429;
-    --bg-light: #ffffff;
-    --text-gray: #6b7280;
+    --bg-light: #1a1a2e;
+    --bg-dark: #16213e;
+    --text-gray: #a0a9c0;
+    --card-bg: #252c48;
+    --orange: #ffa500;
+    --green: #4ade80;
 }
 
 * {
@@ -20,9 +24,10 @@
 }
 
 body {
-    background-color: var(--bg-light);
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
     color: var(--dark);
     line-height: 1.6;
+    min-height: 100vh;
 }
 
 .container {
@@ -33,8 +38,8 @@ body {
 
 /* Modern Header Styles */
 .modern-header {
-    background: var(--bg-light);
-    border-bottom: 1px solid #f1f5f9;
+    background: rgba(26, 26, 46, 0.9);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding: 1rem 0;
     position: sticky;
     top: 0;
@@ -109,39 +114,136 @@ body {
 /* Modern Hero Section with Custom Background */
 .hero-modern {
     position: relative;
-    min-height: 80vh;
-    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-    /* Add this line when you have your Canva background: */
-    /* background-image: url('../assets/hero-background.png'); */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    min-height: 90vh;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    padding: 80px 0;
 }
 
-/* Optional: Add overlay for better text readability */
-.hero-modern::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(255, 255, 255, 0.1); /* Adjust opacity as needed */
-    pointer-events: none;
+.hero-content {
+    text-align: center;
+    z-index: 10;
+    position: relative;
 }
 
-.hero-background {
-    /* Keep this for now, can be removed when using background image */
+.hero-title {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+.highlight-orange {
+    color: var(--orange);
+}
+
+.highlight-green {
+    color: var(--green);
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-gray);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+}
+
+.cta-button:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+}
+
+/* 3D Skill Pyramid */
+.hero-visual {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    pointer-events: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    opacity: 0.3;
+}
+
+.skill-pyramid {
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+.tech-icon {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: white;
+    animation: float 6s ease-in-out infinite;
+}
+
+.tech-icon.nodejs {
+    background: #339933;
+    top: 20px;
+    left: 120px;
+    animation-delay: 0s;
+}
+
+.tech-icon.js {
+    background: #f7df1e;
+    color: #000;
+    top: 80px;
+    left: 60px;
+    animation-delay: -1s;
+}
+
+.tech-icon.typescript {
+    background: #3178c6;
+    top: 80px;
+    right: 60px;
+    animation-delay: -2s;
+}
+
+.tech-icon.react {
+    background: #61dafb;
+    color: #000;
+    bottom: 80px;
+    left: 40px;
+    animation-delay: -3s;
+}
+
+.tech-icon.vue {
+    background: #4fc08d;
+    bottom: 80px;
+    right: 40px;
+    animation-delay: -4s;
+}
+
+.tech-icon.git {
+    background: #f05032;
+    bottom: 20px;
+    left: 120px;
+    animation-delay: -5s;
 }
 
 .floating-element {
@@ -849,8 +951,8 @@ body {
 /* Companies Section */
 .companies-section {
     padding: 60px 0;
-    background: #f8fafc;
-    border-top: 1px solid #e2e8f0;
+    background: rgba(22, 33, 62, 0.7);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .companies-heading {
@@ -922,5 +1024,109 @@ body {
     .company-logo img {
         height: 30px;
         max-width: 80px;
+    }
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.testimonial-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.testimonial-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-name {
+    font-weight: 600;
+    color: var(--dark);
+    font-size: 0.875rem;
+}
+
+.testimonial-role {
+    color: var(--text-gray);
+    font-size: 0.75rem;
+}
+
+.verified-badge {
+    background: #1da1f2;
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.testimonial-content p {
+    color: var(--text-gray);
+    line-height: 1.6;
+    margin-bottom: 16px;
+    font-size: 0.875rem;
+}
+
+.testimonial-rating {
+    font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .skill-pyramid {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .tech-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
     }
 }
